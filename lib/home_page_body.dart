@@ -1,8 +1,11 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class HomePageBody extends StatelessWidget{
+  DateTime timeNow = DateTime.now();
+  String timeFormat = DateFormat('hh:mm:ss').format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
