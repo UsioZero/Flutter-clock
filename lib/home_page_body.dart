@@ -1,10 +1,26 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class HomePageBody extends StatelessWidget{
-  DateTime timeNow = DateTime.now();
-  String timeFormat = DateFormat('hh:mm:ss').format(DateTime.now());
+class HomePageBody extends StatefulWidget{
+  
+  @override
+  _ClockTimeNow createState() {
+    return _ClockTimeNow();
+  }
+}
+
+class _ClockTimeNow extends State<HomePageBody>{
+  String _timeFormat;
+
+  @override
+  void initState(){
+    super.initState();
+    _timeFormat = DateFormat('hh:mm:ss').format(DateTime.now());
+    Timer.periodic(Duration(seconds: 1), (Timer timer) => timeNow());
+  }
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -13,13 +29,12 @@ class HomePageBody extends StatelessWidget{
          children: <Widget>[
            Container(
              child: Text(
-               timeFormat,
+               _timeFormat,
                style: TextStyle(
                  color: Colors.green,
                  height: 1,
                  fontSize: 50
                  ),
-            
                ),
              color: Colors.black,
              padding: EdgeInsets.all(20.0),
@@ -34,4 +49,10 @@ class HomePageBody extends StatelessWidget{
     );
   }
 
+void timeNow(){
+  String formatDate = DateFormat('hh:mm:ss').format(DateTime.now());
+  setState(() {
+    _timeFormat = formatDate;
+  });
+}
 }
