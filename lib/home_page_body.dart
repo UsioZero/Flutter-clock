@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 class HomePageBody extends StatelessWidget{
   DateTime timeNow = DateTime.now();
@@ -14,11 +13,11 @@ class HomePageBody extends StatelessWidget{
          children: <Widget>[
            Container(
              child: Text(
-               '123',
+               timeFormat,
                style: TextStyle(
                  color: Colors.green,
                  height: 1,
-                 fontSize: 100
+                 fontSize: 50
                  ),
             
                ),
