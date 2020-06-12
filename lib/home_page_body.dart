@@ -17,7 +17,7 @@ class _ClockTimeNow extends State<HomePageBody>{
   @override
   void initState(){
     super.initState();
-    _timeFormat = DateFormat('hh:mm:ss').format(DateTime.now());
+    _timeFormat = DateFormat('kk:mm:ss dd-MM-yyyy').format(DateTime.now());
     Timer.periodic(Duration(seconds: 1), (Timer timer) => timeNow());
   }
 
@@ -33,14 +33,14 @@ class _ClockTimeNow extends State<HomePageBody>{
                style: TextStyle(
                  color: Colors.green,
                  height: 1,
-                 fontSize: 50
+                 fontSize: 34
                  ),
                ),
              color: Colors.black,
-             padding: EdgeInsets.all(20.0),
-             margin: EdgeInsets.all(30.0),
+             padding: EdgeInsets.all(10.0),
+             margin: EdgeInsets.all(10.0),
              alignment: Alignment.center,
-             width: 500,
+             width: 600,
              height: 130,
            ),
          ],
@@ -50,7 +50,7 @@ class _ClockTimeNow extends State<HomePageBody>{
   }
 
 void timeNow(){
-  String formatDate = DateFormat('hh:mm:ss').format(DateTime.now());
+  String formatDate = DateFormat('kk:mm:ss dd-MM-yyyy').format(DateTime.now());
   setState(() {
     _timeFormat = formatDate;
   });
