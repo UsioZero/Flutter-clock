@@ -33,14 +33,15 @@ class _ClockTimeNow extends State<HomePageBody>{
                style: TextStyle(
                  color: Colors.green,
                  height: 1,
-                 fontSize: 34
+                 fontSize: 34,
+                 fontWeight: FontWeight.w500
                  ),
                ),
-             color: Colors.black,
-             padding: EdgeInsets.all(10.0),
-             margin: EdgeInsets.all(10.0),
+             color: Colors.black87.withOpacity(0.7),
+             padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
+             margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
              alignment: Alignment.center,
-             width: 600,
+             width: 350,
              height: 130,
            ),
          ],
